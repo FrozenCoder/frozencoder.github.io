@@ -1,8 +1,8 @@
 var win = document.getElementById("iframe");
-var textBox = document.getElementsByName('msg');
+var msg = document.forms[0].elements["msg"].value
 
   document.forms.form.onsubmit = function() {
-    win.contentWindow.postMessage(textBox.value,"http://frozencoder.github.io");
+    win.contentWindow.postMessage(msg,"http://frozencoder.github.io");
     return false;
   }
 
