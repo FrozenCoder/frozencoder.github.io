@@ -1,7 +1,8 @@
 var win = document.getElementById("iframe");
+var textBox = document.getElementById('msg');
 
   document.forms.form.onsubmit = function() {
-    win.postMessage(this.elements.msg.value,"*");
+    win.postMessage(textBox.value,"http://frozencoder.github.io");
     return false;
   }
 
@@ -14,7 +15,9 @@ var win = document.getElementById("iframe");
 }
 
 if (window.addEventListener){
+  console.log('listener added via addEventListener');
   addEventListener("message", listener, false);
 } else {
+  console.log('listener added via attachEvent');
   attachEvent("onmessage", listener);
 }
