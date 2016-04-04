@@ -10,8 +10,8 @@ var textBox = document.getElementById('msg');
     //add this after I can make it work
 //  if ( event.origin !== "https://fiddle.jshell.net" )
   //  return
-
-  document.getElementById("test").innerHTML = "received: "+ event.data;
+  console.log("message being received value = " + event.data);
+  document.getElementById("test").innerHTML = "received: " + event.data;
 }
 
 if (window.addEventListener){
