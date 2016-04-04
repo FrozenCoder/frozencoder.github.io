@@ -1,4 +1,4 @@
-var win = document.getElementById("iframe").contentWindow;
+var win = document.getElementById("iframe");
 
   document.forms.form.onsubmit = function() {
     win.postMessage(this.elements.msg.value,"*");
