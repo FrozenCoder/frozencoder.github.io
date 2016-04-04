@@ -1,5 +1,18 @@
 <html>
 <body>
   <div id="childTest"> Test Div </div>
+  <div>
+    <form name="form">
+      <input type="text" name="msg" value="Your message"/>
+      <input type="submit"/>
+    </form>
+  </div>
 </body>
+<script type="text/javascript">
+    document.forms.form.onsubmit = function() {
+      var msg = document.forms[0].elements["msg"].value;
+      win.contentWindow.postMessage(JSON.stringify(msg),"*");
+      return false;
+}
+</script>
 </html>

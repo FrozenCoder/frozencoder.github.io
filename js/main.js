@@ -11,7 +11,7 @@ function listener(event){
     //add this after I can make it work
 //  if ( event.origin !== "" )
   //  return
-  console.log("message being received value = " + event.data);
+  alert("message being received value = " + event.data);
   document.getElementById("test").innerHTML = "received: " + event.data
 }
 
