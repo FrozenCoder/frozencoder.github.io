@@ -2,7 +2,7 @@ var win = document.getElementById("iframe");
 var textBox = document.getElementsByName('msg');
 
   document.forms.form.onsubmit = function() {
-    win.postMessage(textBox.value,"http://frozencoder.github.io");
+    win.contentWindow.postMessage(textBox.value,"http://frozencoder.github.io");
     return false;
   }
 
