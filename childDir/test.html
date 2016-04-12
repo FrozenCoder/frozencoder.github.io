@@ -8,7 +8,11 @@
     </form>
   </div>
 </body>
-<footer>
-  <script type="text/javascript" src=".\js\iframe.js"></script>
-</footer>
+<script type="text/javascript">
+    document.forms.form.onsubmit = function() {
+      var msg = document.forms[0].elements["msg"].value;
+      window.postMessage(JSON.stringify(msg),"*");
+      return false;
+}
+</script>
 </html>
