@@ -1,11 +1,41 @@
 <html>
   <header>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href"https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
   </header>
   <body>
     <title>Jason's Test Playground</title>
+    <div class="groables_video_container">
+      <a href="https://www.youtube.com/watch?v=TJM07-k3JEc" target="_blank" class="tracklink" data-tracklinktext="groables video play button">
+          Click here for test.
+      </a>
+    </div>
     <audio controls loop>
       <source src="https://ssl.gstatic.com/dictionary/static/sounds/de/0/moist.mp3" type="audio/mpeg">
       Your browser is complete shit and doesn't support this
     </audio>
+    <script type="text/javascript">
+      /* assumes jquery available */
+      $(function() {   // on document.ready
+      	// Setup magnific lightbox for youtube video above
+      	$(".groables_video_container").magnificPopup({
+      		delegate: 'a',
+      		type: 'iframe',
+      		disableOn: 700,
+      		removalDelay: 160,
+      		preloader: false,
+      		fixedContentPos: false,
+      		iframe: {  // customize frame to add yt jsapi param
+      			patterns: {
+      				youtube: {
+      				index: 'youtube.com',
+      				id: 'v=',
+      				src: '//www.youtube.com/embed/%id%?autoplay=1&enablejsapi=1'
+      					}
+            			}
+      		}
+      	});
+      })
+    </script>
   </body>
 </html>
